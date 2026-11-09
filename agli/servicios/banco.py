@@ -43,7 +43,8 @@ def kc_nombre(kc: str) -> str:
 
 class Banco:
     def __init__(self, ruta_banco: Path, ruta_clave: Path, dir_img: Path, demo: bool = False):
-        df = pd.read_csv(ruta_banco, encoding="utf-8-sig")
+        # sep=None: acepta coma o punto y coma (Excel en español guarda con ;)
+        df = pd.read_csv(ruta_banco, encoding="utf-8-sig", sep=None, engine="python")
         clave = self._leer_clave(ruta_clave)
         self.items: dict[str, dict] = {}
         self.sin_clave: list[str] = []

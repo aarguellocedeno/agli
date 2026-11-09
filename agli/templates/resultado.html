@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% from "_macros.html" import rail, colonia, medalla, progreso_sesion %}
+{% from "_macros.html" import rail, colonia, medalla, progreso_sesion, id_celula %}
 {% block titulo %}{{ 'Correcto' if r.correcta else 'Respuesta incorrecta' }}, AGLI{% endblock %}
 {% block main %}
 <div class="marco">
   {{ rail(panel) }}
   <section class="escena" aria-label="Resultado de la pregunta">
     <div class="encabezado">
-      <h2 class="num-pregunta">Pregunta {{ u.sesion_n if u.sesion_n else sesion_len }} de {{ sesion_len }}</h2>
+      <div class="titulo-id">{{ id_celula(item, kc_slug(item.kc)) }}<h2 class="num-pregunta">Pregunta {{ u.sesion_n if u.sesion_n else sesion_len }} de {{ sesion_len }}</h2></div>
       {{ progreso_sesion(segmentos) }}
     </div>
 

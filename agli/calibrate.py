@@ -35,7 +35,7 @@ def logit(p):
 
 def cargar():
     df = pd.read_csv(RUTA_CSV)
-    banco = pd.read_csv(RUTA_BANCO, encoding="utf-8-sig")
+    banco = pd.read_csv(RUTA_BANCO, encoding="utf-8-sig", sep=None, engine="python")
     df["kc"] = df["question_id"].map(banco.set_index("id")["eje_tematico"])
     assert df["kc"].notna().all(), "question_id fuera del banco"
     df["t"] = df.groupby("student_id").cumcount()

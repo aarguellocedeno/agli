@@ -6,6 +6,7 @@
 Uso: python evaluate.py [n_estudiantes] [pasos]
 """
 import json
+import random
 import sys
 from pathlib import Path
 
@@ -67,7 +68,7 @@ def correr(politica, params, n_est, pasos, seed=1):
     rng = np.random.default_rng(seed)
     mundo = Mundo(params, rng)
     alpha = 0.0 if politica == "zpd_sin_bandido" else params.hyper["alpha"]
-    eng = AdaptiveEngine(params, bandit=LinUCB(len(FEATURE_NAMES), alpha=alpha))
+    eng = AdaptiveEngine(params, bandit=LinUCB(len(FEATURE_NAMES), alpha=alpha), rng=random.Random(seed))
     items = params.items
     acc, ptrue, explora, jefes, dominios, expos = [], [], [], 0, 0, {}
     th_hat, th_true, pl_fin, dom_fin, racha_prot = [], [], [], [], 0

@@ -1,0 +1,63 @@
+{
+  "chequeo_EM_BKT": {
+    "real": {
+      "prior": 0.3,
+      "learn": 0.15,
+      "slip": 0.12,
+      "guess": 0.22
+    },
+    "estimado": {
+      "prior": 0.28,
+      "learn": 0.153,
+      "slip": 0.11,
+      "guess": 0.245
+    }
+  },
+  "simulacion": {
+    "aleatoria": {
+      "acierto_real": 0.64575,
+      "P_acierto_predicha_media": null,
+      "Brier_P_predicha_en_el_lazo": null,
+      "AUC_P_predicha_en_el_lazo": null,
+      "pct_exploracion": null,
+      "items_usados_de_81": 81,
+      "exposicion_max_item": 180,
+      "AUC_P(L)_final_vs_dominio_real": 0.9546105711622952,
+      "Brier_P(L)_final": 0.06012317307977826,
+      "corr_theta_est_vs_real": 0.5734456228934658,
+      "jefes_desbloqueados_por_estudiante": 0.0,
+      "kc_dominados_por_estudiante": 0.0,
+      "rachas_protegidas_por_estudiante": 0.0
+    },
+    "zpd_sin_bandido": {
+      "acierto_real": 0.5915,
+      "P_acierto_predicha_media": 0.5809722720035374,
+      "Brier_P_predicha_en_el_lazo": 0.20416620033678692,
+      "AUC_P_predicha_en_el_lazo": 0.733343452779005,
+      "pct_exploracion": 0.005583333333333333,
+      "items_usados_de_81": 81,
+      "exposicion_max_item": 241,
+      "AUC_P(L)_final_vs_dominio_real": 0.9407648546144121,
+      "Brier_P(L)_final": 0.03888307723899116,
+      "corr_theta_est_vs_real": 0.5610293802790749,
+      "jefes_desbloqueados_por_estudiante": 4.043333333333333,
+      "kc_dominados_por_estudiante": 3.0566666666666666,
+      "rachas_protegidas_por_estudiante": 0.25
+    },
+    "motor_completo": {
+      "acierto_real": 0.5955,
+      "P_acierto_predicha_media": 0.5834221021195775,
+      "Brier_P_predicha_en_el_lazo": 0.20454661625592432,
+      "AUC_P_predicha_en_el_lazo": 0.7307941716192876,
+      "pct_exploracion": 0.006166666666666667,
+      "items_usados_de_81": 81,
+      "exposicion_max_item": 268,
+      "AUC_P(L)_final_vs_dominio_real": 0.9318385650224215,
+      "Brier_P(L)_final": 0.043731326915106165,
+      "corr_theta_est_vs_real": 0.5837318126561221,
+      "jefes_desbloqueados_por_estudiante": 4.02,
+      "kc_dominados_por_estudiante": 3.0766666666666667,
+      "rachas_protegidas_por_estudiante": 0.3233333333333333
+    }
+  }
+}

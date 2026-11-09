@@ -32,7 +32,7 @@ FIGURA = re.compile(
 
 
 def main():
-    banco = pd.read_csv(BANCO, encoding="utf-8-sig")
+    banco = pd.read_csv(BANCO, encoding="utf-8-sig", sep=None, engine="python")
     previo = {}
     if CLAVE.exists():
         p = pd.read_csv(CLAVE, encoding="utf-8-sig", sep=None, engine="python", dtype=str).fillna("")

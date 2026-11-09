@@ -248,6 +248,21 @@ a { color: var(--prim-osc); }
 }
 
 /* ================= pregunta ================= */
+/* Célula con el id de la pregunta, junto al título */
+.titulo-id { display: flex; align-items: center; gap: 12px; }
+.id-cel {
+  flex: none; position: relative; display: grid; place-items: center;
+  min-width: 64px; height: 56px; padding: 0 10px;
+  background:
+    radial-gradient(circle at 30% 26%, rgba(255,255,255,.75) 0 9%, transparent 11%),
+    radial-gradient(circle at 74% 70%, var(--org) 0 5%, transparent 6.5%),
+    radial-gradient(ellipse at 50% 50%, var(--c1) 0, var(--c2) 80%);
+  box-shadow: 0 0 0 3px var(--mem), 0 5px 12px color-mix(in srgb, var(--mem) 30%, transparent);
+  border-radius: 46% 54% 52% 48% / 52% 44% 56% 48%;
+  animation: late 4.2s ease-in-out infinite;
+}
+.id-txt { font: 700 .95rem/1 var(--display); color: var(--nuc2); letter-spacing: .02em; }
+
 .encabezado { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
 .num-pregunta, .encabezado h1, .encabezado h2 { font: 600 1.2rem var(--display); margin: 0; color: var(--suave); }
 

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_macros.html" import rail, progreso_sesion, puntos %}
+{% from "_macros.html" import rail, progreso_sesion, puntos, id_celula %}
 {% block titulo %}Pregunta {{ n }} de {{ sesion_len }}, AGLI{% endblock %}
 {% block main %}
 <div class="marco">
@@ -13,7 +13,7 @@
     </div>
     {% endif %}
     <div class="encabezado">
-      <h1 id="titulo-pregunta">Pregunta {{ n }} de {{ sesion_len }}</h1>
+      <div class="titulo-id">{{ id_celula(item, kc_slug(item.kc)) }}<h1 id="titulo-pregunta">Pregunta {{ n }} de {{ sesion_len }}</h1></div>
       {{ progreso_sesion(segmentos, n) }}
     </div>
     <p class="meta"><span class="chip eje-{{ kc_slug(item.kc) }}">{{ kc_nombre(item.kc) }}</span><span class="reto">Reto {{ puntos(item.dificultad) }}</span></p>

@@ -43,4 +43,9 @@
 </div>
 {% endmacro %}
 
+{# Célula con el identificador de la pregunta (el id del banco), del color de su eje. #}
+{% macro id_celula(item, slug) -%}
+<span class="id-cel eje-{{ slug }}" role="img" aria-label="Identificador de la pregunta: {{ item.id }}" title="Pregunta {{ item.id }}"><span class="id-txt">{{ item.id }}</span></span>
+{%- endmacro %}
+
 {% macro puntos(n) %}<span class="puntos" role="img" aria-label="Reto {{ n }} de 3">{% for i in range(3) %}<i class="{{ 'on' if i < n }}"></i>{% endfor %}</span>{% endmacro %}

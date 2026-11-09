@@ -5,6 +5,8 @@ Flujo por pregunta
   2. IRT estima P(acierto) de cada ítem candidato del KC (theta + a, b calibrados),
      corregida por un "stacker" logístico que mezcla IRT y BKT.
   3. LinUCB puntúa cada candidato: utilidad ZPD + recompensa aprendida + bono de incertidumbre.
+     Para que no todos reciban la misma secuencia, se sortea entre los candidatos del mismo
+     nivel de dificultad que el mejor y con puntaje cercano a él (hyper "margen_variedad").
   4. Tras la respuesta: se actualizan BKT, theta, pesos del bandido y la gamificación.
 
 Cada recomendación devuelve sus componentes (auditable) y una explicación en español.
@@ -13,6 +15,7 @@ El estado del estudiante es un dict JSON-serializable (columna JSON en SQLite/SQ
 from __future__ import annotations
 
 import json
+import random
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 
@@ -92,8 +95,11 @@ class Recommendation:
 
 class AdaptiveEngine:
     def __init__(self, params: EngineParams, bandit: LinUCB | None = None,
-                 exposures: dict[str, int] | None = None, activos: set[str] | None = None):
-        """`activos`: ids de ítems que se pueden servir (p. ej. con clave de respuesta e imagen)."""
+                 exposures: dict[str, int] | None = None, activos: set[str] | None = None,
+                 rng: random.Random | None = None):
+        """`activos`: ids de ítems que se pueden servir (p. ej. con clave de respuesta e imagen).
+        `rng`: generador para el sorteo entre preguntas equivalentes (pásale una semilla para reproducir)."""
+        self.rng = rng or random.Random()
         self.P = params
         self.h = params.hyper
         self.by_id = {i.id: i for i in params.items}
@@ -154,7 +160,13 @@ class AdaptiveEngine:
             x = self.context(st, it)
             mean_hat, bonus = self.bandit.score(x)
             filas.append((w_zpd * zpd + mean_hat + bonus, it, p, zpd, mean_hat, bonus, x))
-        best = max(filas, key=lambda f: f[0])
+        mejor = max(filas, key=lambda f: f[0])
+        # Variedad: sorteo entre los candidatos del mismo nivel de dificultad que el mejor
+        # y con puntaje a menos de `margen_variedad` de él (el mejor siempre está incluido).
+        margen = self.h.get("margen_variedad", 0.2)
+        pool = [f for f in filas
+                if f[1].dificultad == mejor[1].dificultad and f[0] >= mejor[0] - margen]
+        best = self.rng.choice(pool)
         greedy = max(filas, key=lambda f: f[3])           # lo que elegiría un ZPD puro
         _, it, p, zpd, mean_hat, bonus, x = best
         # exploración = el bandido sacrificó utilidad ZPD apreciable (>0.10 ≈ 5 pts de P) por información
@@ -172,7 +184,9 @@ class AdaptiveEngine:
         kc = st.boss["kc"]
         vistos = {h["item"] for h in st.history}
         c = sorted(self.by_kc[kc], key=lambda i: (i.id in vistos, -i.b))
-        it = c[0]
+        # sorteo entre las 3 más difíciles aún no vistas (o las 3 primeras si ya se vieron todas)
+        nuevas = [i for i in c if i.id not in vistos]
+        it = self.rng.choice((nuevas or c)[:3])
         p = self.p_pred(st, it)
         return Recommendation(it.id, kc, p, False, True,
                               f"¡Jefe del eje «{kc}»! {st.boss['restantes']} pregunta(s) difíciles "
