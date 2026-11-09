@@ -1,0 +1,697 @@
+{
+  "kcs": [
+    "Herencia y mecanismos de evolución",
+    "Intercambio de energía entre los ecosistemas",
+    "Procesos vitales y organización de los seres vivos",
+    "Relación entre seres vivos y ecosistemas del mundo"
+  ],
+  "bkt": {
+    "Herencia y mecanismos de evolución": {
+      "prior": 0.2466392106899345,
+      "learn": 0.11982183074894621,
+      "slip": 0.15848066761077537,
+      "guess": 0.23733809774461048
+    },
+    "Intercambio de energía entre los ecosistemas": {
+      "prior": 0.32524004552278263,
+      "learn": 0.1616835353237229,
+      "slip": 0.10427002237973589,
+      "guess": 0.2141355159042165
+    },
+    "Procesos vitales y organización de los seres vivos": {
+      "prior": 0.2163570109323287,
+      "learn": 0.1703480358982166,
+      "slip": 0.14160658591383177,
+      "guess": 0.2413666793284261
+    },
+    "Relación entre seres vivos y ecosistemas del mundo": {
+      "prior": 0.32327770719064997,
+      "learn": 0.1580374800469004,
+      "slip": 0.09353998169771456,
+      "guess": 0.23702325859950726
+    }
+  },
+  "items": [
+    {
+      "id": "q_01",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 2,
+      "a": 0.8479909515901327,
+      "b": -0.6348353280404032,
+      "sd_b": 0.23337583928685976
+    },
+    {
+      "id": "q_02",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 2,
+      "a": 1.006138302897052,
+      "b": -0.4665101121111044,
+      "sd_b": 0.20243517920185558
+    },
+    {
+      "id": "q_03",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 2,
+      "a": 1.252551755764321,
+      "b": -0.5204434178941968,
+      "sd_b": 0.17584005884413093
+    },
+    {
+      "id": "q_04",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 3,
+      "a": 0.8935692658233597,
+      "b": -0.332404037865215,
+      "sd_b": 0.21115974699923387
+    },
+    {
+      "id": "q_05",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 1,
+      "a": 0.8766537634236261,
+      "b": -0.904596460939526,
+      "sd_b": 0.234854014482193
+    },
+    {
+      "id": "q_06",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 1,
+      "a": 1.0189415184083574,
+      "b": -0.6301331733338892,
+      "sd_b": 0.2076309061373661
+    },
+    {
+      "id": "q_07",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 2,
+      "a": 1.022423868635674,
+      "b": -0.6682620647044593,
+      "sd_b": 0.20581246874491216
+    },
+    {
+      "id": "q_08",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 2,
+      "a": 1.2699795530498823,
+      "b": -0.7451184850039604,
+      "sd_b": 0.17728442040912418
+    },
+    {
+      "id": "q_09",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 2,
+      "a": 1.012453315735556,
+      "b": -0.3098082959514779,
+      "sd_b": 0.19994928199736603
+    },
+    {
+      "id": "q_10",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 3,
+      "a": 0.9453347119841241,
+      "b": -0.43773145036248956,
+      "sd_b": 0.21120385534147323
+    },
+    {
+      "id": "q_11",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 3,
+      "a": 1.1156250823989655,
+      "b": -0.7654319232969602,
+      "sd_b": 0.19775989422980972
+    },
+    {
+      "id": "q_12",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 1,
+      "a": 1.0647412501505054,
+      "b": -1.1416973400037784,
+      "sd_b": 0.2103274437567964
+    },
+    {
+      "id": "q_13",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 1,
+      "a": 1.2784478895286504,
+      "b": -1.1324712830937584,
+      "sd_b": 0.19036082873250743
+    },
+    {
+      "id": "q_14",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 2,
+      "a": 1.210538833803321,
+      "b": -0.8543755599620809,
+      "sd_b": 0.19200525962723677
+    },
+    {
+      "id": "q_15",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 2,
+      "a": 1.0706506175468473,
+      "b": -0.7842864957321162,
+      "sd_b": 0.19302525339134904
+    },
+    {
+      "id": "q_16",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 1,
+      "a": 1.5486737021505987,
+      "b": -0.9741947434139901,
+      "sd_b": 0.1618277118517058
+    },
+    {
+      "id": "q_17",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 1,
+      "a": 1.1116428074620641,
+      "b": -1.0285639583735726,
+      "sd_b": 0.20672281509695242
+    },
+    {
+      "id": "q_18",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 2,
+      "a": 0.7961472519668522,
+      "b": -0.49367258363273336,
+      "sd_b": 0.24843942277847314
+    },
+    {
+      "id": "q_19",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 3,
+      "a": 0.9460604449805142,
+      "b": -0.3969714640859222,
+      "sd_b": 0.2179619815515363
+    },
+    {
+      "id": "q_20",
+      "kc": "Relación entre seres vivos y ecosistemas del mundo",
+      "dificultad": 2,
+      "a": 1.3467314460629616,
+      "b": -0.7000912500137197,
+      "sd_b": 0.1740477267108574
+    },
+    {
+      "id": "q_21",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 1,
+      "a": 1.3317471893328472,
+      "b": -0.38989256066812056,
+      "sd_b": 0.1625378823629692
+    },
+    {
+      "id": "q_22",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 2,
+      "a": 1.1936583522746138,
+      "b": -0.7876528452912962,
+      "sd_b": 0.1845062018006036
+    },
+    {
+      "id": "q_23",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 3,
+      "a": 1.0790221076597502,
+      "b": -0.4089334020621845,
+      "sd_b": 0.18938121530156518
+    },
+    {
+      "id": "q_24",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 2,
+      "a": 1.1120376990714622,
+      "b": -0.7833408912871251,
+      "sd_b": 0.1954860672811657
+    },
+    {
+      "id": "q_25",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 1,
+      "a": 1.3993870875476542,
+      "b": -0.8182975572781412,
+      "sd_b": 0.16774670174934697
+    },
+    {
+      "id": "q_26",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 1,
+      "a": 1.8177709055139906,
+      "b": -0.6199247826665031,
+      "sd_b": 0.138975536207117
+    },
+    {
+      "id": "q_27",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 2,
+      "a": 1.0073604096470217,
+      "b": -0.6220583248279943,
+      "sd_b": 0.20703336051154408
+    },
+    {
+      "id": "q_28",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 2,
+      "a": 0.912637021302964,
+      "b": -0.4963150646138202,
+      "sd_b": 0.22969873806036922
+    },
+    {
+      "id": "q_29",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 1,
+      "a": 1.2529570596695003,
+      "b": -0.9488876707691688,
+      "sd_b": 0.1806133068475246
+    },
+    {
+      "id": "q_30",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 3,
+      "a": 0.8012869636547796,
+      "b": -0.3489669439037655,
+      "sd_b": 0.24626876992747268
+    },
+    {
+      "id": "q_31",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 3,
+      "a": 1.1357852447236085,
+      "b": -0.21254684795084028,
+      "sd_b": 0.19563269809520709
+    },
+    {
+      "id": "q_32",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 1,
+      "a": 1.1402125731547914,
+      "b": -0.8544802441678278,
+      "sd_b": 0.1931989247661393
+    },
+    {
+      "id": "q_33",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 3,
+      "a": 1.1576770924881445,
+      "b": -0.4328073954781224,
+      "sd_b": 0.1778812314293428
+    },
+    {
+      "id": "q_34",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 2,
+      "a": 1.197616183743683,
+      "b": -0.4917321381164102,
+      "sd_b": 0.1818915873827285
+    },
+    {
+      "id": "q_35",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 1,
+      "a": 1.1502866324150367,
+      "b": -0.7520389156869005,
+      "sd_b": 0.1934250167524354
+    },
+    {
+      "id": "q_36",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 1,
+      "a": 0.9917471166701429,
+      "b": -0.9672387191172325,
+      "sd_b": 0.2194311223140737
+    },
+    {
+      "id": "q_37",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 2,
+      "a": 0.9618492790627314,
+      "b": -0.9945964162018719,
+      "sd_b": 0.23970441132008835
+    },
+    {
+      "id": "q_38",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 1,
+      "a": 1.088153631833811,
+      "b": -0.8511226186380755,
+      "sd_b": 0.2198827911857832
+    },
+    {
+      "id": "q_39",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 2,
+      "a": 1.2408579221442848,
+      "b": -0.5888965259080168,
+      "sd_b": 0.18183586539450308
+    },
+    {
+      "id": "q_40",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 2,
+      "a": 1.0915829794424294,
+      "b": -0.7960184320092774,
+      "sd_b": 0.1933329713529217
+    },
+    {
+      "id": "q_41",
+      "kc": "Intercambio de energía entre los ecosistemas",
+      "dificultad": 3,
+      "a": 1.1788820375491615,
+      "b": -0.334122042499586,
+      "sd_b": 0.1828721720498435
+    },
+    {
+      "id": "q_42",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 2,
+      "a": 0.7479568533860529,
+      "b": -0.8277174245437616,
+      "sd_b": 0.25947416504099075
+    },
+    {
+      "id": "q_43",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 2,
+      "a": 1.2029934193642844,
+      "b": -0.15777418335546145,
+      "sd_b": 0.1810598894819054
+    },
+    {
+      "id": "q_44",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 3,
+      "a": 1.1369774052402952,
+      "b": -0.625358589478039,
+      "sd_b": 0.18186432290016658
+    },
+    {
+      "id": "q_45",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 3,
+      "a": 0.956729143253914,
+      "b": -0.4631772283986636,
+      "sd_b": 0.20706370318007117
+    },
+    {
+      "id": "q_46",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 2,
+      "a": 0.8255121342528581,
+      "b": -0.6917631870657577,
+      "sd_b": 0.2508915646973688
+    },
+    {
+      "id": "q_47",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 2,
+      "a": 1.4517189139733324,
+      "b": -0.7020281755598178,
+      "sd_b": 0.1605891670129802
+    },
+    {
+      "id": "q_48",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 2,
+      "a": 0.8867749712434883,
+      "b": -0.6279381477162738,
+      "sd_b": 0.2298834928976433
+    },
+    {
+      "id": "q_49",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 2,
+      "a": 1.2319257636129581,
+      "b": -0.7242917808255129,
+      "sd_b": 0.1840986866600722
+    },
+    {
+      "id": "q_50",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 1,
+      "a": 1.133162911316415,
+      "b": -0.6956359588347397,
+      "sd_b": 0.19803529777759846
+    },
+    {
+      "id": "q_51",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 3,
+      "a": 0.836211020549309,
+      "b": -0.6370794341279897,
+      "sd_b": 0.21817803541419784
+    },
+    {
+      "id": "q_52",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 3,
+      "a": 0.9830469557939997,
+      "b": -0.08841230814295907,
+      "sd_b": 0.21661642320208502
+    },
+    {
+      "id": "q_53",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 2,
+      "a": 0.8861782256658767,
+      "b": -0.725023694900587,
+      "sd_b": 0.23902544215010954
+    },
+    {
+      "id": "q_54",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 2,
+      "a": 1.2184365093287424,
+      "b": -0.37658368786172286,
+      "sd_b": 0.1747889545002287
+    },
+    {
+      "id": "q_55",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 3,
+      "a": 1.0442285597920977,
+      "b": -0.407695785689645,
+      "sd_b": 0.20588576266935696
+    },
+    {
+      "id": "q_56",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 3,
+      "a": 0.9044597973926048,
+      "b": -0.4305798884489788,
+      "sd_b": 0.2260647874497472
+    },
+    {
+      "id": "q_57",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 2,
+      "a": 1.1179451079140548,
+      "b": -0.3528543761271546,
+      "sd_b": 0.1853373238426951
+    },
+    {
+      "id": "q_58",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 1,
+      "a": 1.0068988878055114,
+      "b": -0.7807896877203423,
+      "sd_b": 0.22363461354404524
+    },
+    {
+      "id": "q_59",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 2,
+      "a": 0.6891915453056873,
+      "b": -0.37022241079760093,
+      "sd_b": 0.26384594932329813
+    },
+    {
+      "id": "q_60",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 3,
+      "a": 0.8560117902660593,
+      "b": -0.5997847128956507,
+      "sd_b": 0.22099453228109817
+    },
+    {
+      "id": "q_61",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 3,
+      "a": 1.0807969425967479,
+      "b": -0.03680911828102188,
+      "sd_b": 0.18948352374104713
+    },
+    {
+      "id": "q_62",
+      "kc": "Procesos vitales y organización de los seres vivos",
+      "dificultad": 1,
+      "a": 1.0238375637609525,
+      "b": -1.053661482371153,
+      "sd_b": 0.21319415372625292
+    },
+    {
+      "id": "q_63",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 2,
+      "a": 1.2499511349799084,
+      "b": -0.6759873089164413,
+      "sd_b": 0.1850194407327347
+    },
+    {
+      "id": "q_64",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 3,
+      "a": 1.331483526293395,
+      "b": -0.4226780857589832,
+      "sd_b": 0.1622881484438704
+    },
+    {
+      "id": "q_65",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 2,
+      "a": 1.2896971565318698,
+      "b": -0.6365114833512544,
+      "sd_b": 0.1725186565015415
+    },
+    {
+      "id": "q_66",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 3,
+      "a": 0.9904717930989477,
+      "b": -0.10199068382837756,
+      "sd_b": 0.1977541102956522
+    },
+    {
+      "id": "q_67",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 3,
+      "a": 1.2718350996325747,
+      "b": -0.3023579122066003,
+      "sd_b": 0.17057107067559177
+    },
+    {
+      "id": "q_68",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 2,
+      "a": 0.9095795911829146,
+      "b": -0.5277930313080729,
+      "sd_b": 0.21652971406744356
+    },
+    {
+      "id": "q_69",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 3,
+      "a": 1.2026786850872917,
+      "b": -0.14074249756954424,
+      "sd_b": 0.17061401041393454
+    },
+    {
+      "id": "q_70",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 3,
+      "a": 1.694700607649807,
+      "b": -0.14238467669877952,
+      "sd_b": 0.13089255144390816
+    },
+    {
+      "id": "q_71",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 3,
+      "a": 1.4647375206765987,
+      "b": -0.17062510135958117,
+      "sd_b": 0.1490452051861962
+    },
+    {
+      "id": "q_72",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 3,
+      "a": 1.1706722579757942,
+      "b": -0.23897901902634747,
+      "sd_b": 0.18496363716179318
+    },
+    {
+      "id": "q_73",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 3,
+      "a": 1.1786205782462233,
+      "b": 0.05088529218562439,
+      "sd_b": 0.18123257046705205
+    },
+    {
+      "id": "q_74",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 3,
+      "a": 1.070961487074149,
+      "b": -0.038389388267636645,
+      "sd_b": 0.20524980149600794
+    },
+    {
+      "id": "q_75",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 2,
+      "a": 1.0919070377457396,
+      "b": -0.1321627396372578,
+      "sd_b": 0.18269127506274918
+    },
+    {
+      "id": "q_76",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 2,
+      "a": 1.2321753479603705,
+      "b": -0.1927557184486414,
+      "sd_b": 0.17191718041065884
+    },
+    {
+      "id": "q_77",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 1,
+      "a": 1.1284549350795245,
+      "b": -0.3605747830813209,
+      "sd_b": 0.18238156326850474
+    },
+    {
+      "id": "q_78",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 3,
+      "a": 0.9216768673494992,
+      "b": 0.01557347267977154,
+      "sd_b": 0.2160478776093058
+    },
+    {
+      "id": "q_79",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 2,
+      "a": 1.6130115298825656,
+      "b": -0.19398830935659162,
+      "sd_b": 0.14316126753581965
+    },
+    {
+      "id": "q_80",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 3,
+      "a": 1.2643427474989088,
+      "b": -0.22350067142520558,
+      "sd_b": 0.16871005484706503
+    },
+    {
+      "id": "q_81",
+      "kc": "Herencia y mecanismos de evolución",
+      "dificultad": 3,
+      "a": 0.7619196179322226,
+      "b": -0.2937070503120085,
+      "sd_b": 0.25563686452048423
+    }
+  ],
+  "stacker": {
+    "w0": -0.06939813779603388,
+    "w_irt": 0.2149746451034416,
+    "w_bkt": 0.871184041164091
+  },
+  "hyper": {
+    "target_prob": 0.72,
+    "mastery_threshold": 0.85,
+    "alpha": 0.3,
+    "w_zpd": 1.0,
+    "boss_len": 3,
+    "boss_pass": 2
+  }
+}

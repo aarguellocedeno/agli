@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% from "_macros.html" import rail, colonia, medalla, progreso_sesion %}
+{% block titulo %}{{ 'Correcto' if r.correcta else 'Respuesta incorrecta' }}, AGLI{% endblock %}
+{% block main %}
+<div class="marco">
+  {{ rail(panel) }}
+  <section class="escena" aria-label="Resultado de la pregunta">
+    <div class="encabezado">
+      <h2 class="num-pregunta">Pregunta {{ u.sesion_n if u.sesion_n else sesion_len }} de {{ sesion_len }}</h2>
+      {{ progreso_sesion(segmentos) }}
+    </div>
+
+    <div class="confeti"{{ " data-fiesta" if r.correcta }} aria-hidden="true"></div>
+    <div class="veredicto {{ 'ok' if r.correcta else 'mal' }}" role="status">
+      <span class="veredicto-ico" aria-hidden="true">{{ '✔' if r.correcta else '✘' }}</span>
+      <div>
+        <h1>{{ '¡Correcto!' if r.correcta else 'No era esa.' }}</h1>
+        {% if r.correcta %}
+        <p>Elegiste la {{ r.opcion }}: {{ item.opciones[r.opcion] }}</p>
+        {% else %}
+        <p>Elegiste la {{ r.opcion }}. La respuesta correcta es la {{ fb.clave }}: {{ item.opciones[fb.clave] }}</p>
+        {% endif %}
+      </div>
+    </div>
+    {% if fb.clave_demo %}<p class="nota-demo">Esta pregunta no tiene clave verificada: la respuesta correcta mostrada es de prueba.</p>{% endif %}
+
+    <div class="ganancia">
+      {% if r.xp %}
+      <p class="xp-ganado"><span class="xp-num" data-valor="{{ r.xp }}">+{{ r.xp }}</span> XP</p>
+      {% else %}
+      <p class="xp-cero">Sin XP en esta pregunta.</p>
+      {% endif %}
+      {% if r.correcta %}
+      <p class="racha-linea">Racha de {{ r.racha }}</p>
+      {% elif fb.racha_antes > 0 and r.racha == 0 %}
+      <p class="racha-linea">Tu racha de {{ fb.racha_antes }} se reinició.</p>
+      {% endif %}
+    </div>
+
+    <div class="dominio tarjeta">
+      {{ colonia(col, desde) }}
+      <p>Dominio de «{{ col.nombre }}»: <b>{{ pct_antes }} %</b> a <b>{{ col.pct }} %</b></p>
+    </div>
+
+    {% if eventos %}
+    <ul class="eventos">
+      {% for e in eventos %}<li class="ev-{{ e.tipo }}">{{ e.texto }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if medallas %}
+    <div class="nuevas">
+      <h3>{{ 'Nueva insignia' if medallas|length == 1 else 'Nuevas insignias' }}</h3>
+      <div class="medallas">{% for m in medallas %}{{ medalla(m, loop.index) }}{% endfor %}</div>
+    </div>
+    {% endif %}
+
+    <div class="acciones">
+      {% if fin_sesion %}
+      <a class="btn" href="{{ url_for('resumen') }}">Ver resumen</a>
+      {% else %}
+      <a class="btn" href="{{ url_for('practicar') }}" id="siguiente" autofocus>Siguiente pregunta</a>
+      {% endif %}
+    </div>
+  </section>
+</div>
+{% endblock %}

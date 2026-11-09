@@ -1,0 +1,46 @@
+{# Colonia: placa de Petri con 20 células; cada una "nace" (se tiñe) cuando sube el dominio del eje.
+   `desde` marca las células nuevas. Cada eje tiene su propio color de célula (clase eje-<slug>). #}
+{% macro colonia(c, desde=None, grande=False) -%}
+<div class="colonia eje-{{ c.slug or 'procesos' }}{{ ' colonia-grande' if grande }}" role="img" aria-label="{{ c.nombre }}: {{ c.pct }} % de dominio">
+  {%- for k in c.celulas -%}
+  <i class="cel{{ ' on' if k.on }}{{ ' nueva' if desde is not none and k.on and k.rank >= desde }}" style="--dx:{{ k.dx }};--dy:{{ k.dy }};--s:{{ k.s }};--r:{{ k.rank - (desde or 0) }};--i:{{ loop.index }}"></i>
+  {%- endfor -%}
+</div>
+{%- endmacro %}
+
+{% macro rail(panel) %}
+<aside class="lab" aria-label="Tu avance">
+  <div class="lab-top">
+    <div class="lab-nivel"><span class="nivel-cel"><span class="num">{{ panel.nivel }}</span></span><span class="nivel-txt">Nivel</span></div>
+    <div class="lab-xp">
+      <div class="xp" role="progressbar" aria-valuemin="0" aria-valuemax="{{ panel.xp_meta }}" aria-valuenow="{{ panel.xp_nivel }}" aria-label="Experiencia del nivel"><span style="width:{{ panel.pct_xp }}%"></span></div>
+      <p class="xp-txt">{{ panel.xp_nivel }} de {{ panel.xp_meta }} XP para el nivel {{ panel.nivel + 1 }}</p>
+      <p class="racha{{ ' activa' if panel.racha }}"><span class="fuego" aria-hidden="true">🔥</span> Racha de {{ panel.racha }}</p>
+    </div>
+  </div>
+  <p class="lab-titulo">Tu laboratorio</p>
+  <ul class="lab-colonias">
+    {% for c in panel.colonias %}
+    <li>{{ colonia(c) }}<span class="lab-ej"><b>{{ c.nombre }}</b>{{ c.pct }} % de dominio</span></li>
+    {% endfor %}
+  </ul>
+</aside>
+{% endmacro %}
+
+{% macro progreso_sesion(seg, actual=None, grande=False) %}
+<ol class="segs{{ ' grande' if grande }}" aria-label="Progreso de la sesión">
+  {% for s in seg %}
+  <li class="{{ 'ok' if s is sameas true else ('mal' if s is sameas false else 'pend') }}{{ ' actual' if actual is not none and loop.index == actual }}" style="--i:{{ loop.index }}"><span class="sr">Pregunta {{ loop.index }}: {{ 'acierto' if s is sameas true else ('error' if s is sameas false else 'pendiente') }}</span></li>
+  {% endfor %}
+</ol>
+{% endmacro %}
+
+{% macro medalla(m, i=0) %}
+{% set ganada = (m.ganada is not defined) or m.ganada %}
+<div class="medalla {{ 'ganada' if ganada else 'bloqueada' }}" style="--i:{{ i }}">
+  <span class="med-ico" aria-hidden="true">{{ m.icono if ganada else '?' }}</span>
+  <span class="med-txt"><b>{{ m.nombre }}</b><small>{{ m.desc }}</small></span>
+</div>
+{% endmacro %}
+
+{% macro puntos(n) %}<span class="puntos" role="img" aria-label="Reto {{ n }} de 3">{% for i in range(3) %}<i class="{{ 'on' if i < n }}"></i>{% endfor %}</span>{% endmacro %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% from "_macros.html" import colonia, medalla %}
+{% block titulo %}Mi progreso, AGLI{% endblock %}
+{% block clase %}pagina-progreso{% endblock %}
+{% block main %}
+<div class="ancho">
+  <h1>Tu progreso <span aria-hidden="true">🌱</span></h1>
+  <dl class="cifras">
+    <div class="c-nivel"><dt><span aria-hidden="true">🧫</span> Nivel</dt><dd>{{ panel.nivel }}</dd></div>
+    <div class="c-xp"><dt><span aria-hidden="true">⭐</span> XP total</dt><dd>{{ panel.xp }}</dd></div>
+    <div class="c-agua"><dt><span aria-hidden="true">📝</span> Preguntas respondidas</dt><dd>{{ p.total }}</dd></div>
+    <div class="c-acierto"><dt><span aria-hidden="true">✅</span> Aciertos</dt><dd>{{ p.pct }} %</dd></div>
+    <div class="c-racha"><dt><span aria-hidden="true">🔥</span> Mejor racha</dt><dd>{{ panel.mejor_racha }}</dd></div>
+  </dl>
+
+  <h2>Tus colonias</h2>
+  <p class="lead-chico">Cada célula viva de la placa es una parte del eje que ya dominas. ¡Llena la placa!</p>
+  <div class="ejes">
+    {% for c in panel.colonias %}
+    <section class="eje tarjeta eje-{{ c.slug }}">
+      {{ colonia(c, None, True) }}
+      <h3>{{ c.nombre }}</h3>
+      <p>{{ c.pct }} % de dominio{{ '. Eje dominado.' if c.dominado else '.' }}</p>
+    </section>
+    {% endfor %}
+  </div>
+
+  <h2>Insignias <small>{{ p.n_medallas }} de {{ p.medallas|length }}</small></h2>
+  <div class="medallas">{% for m in p.medallas %}{{ medalla(m, loop.index) }}{% endfor %}</div>
+
+  <h2>Últimas respuestas</h2>
+  {% if p.recientes %}
+  <div class="tarjeta tabla-env"><table class="historial">
+    <thead><tr><th scope="col">Eje</th><th scope="col">Resultado</th><th scope="col">XP</th></tr></thead>
+    <tbody>
+      {% for r in p.recientes %}
+      <tr><td>{{ kc_nombre(r.kc) }}</td><td class="{{ 'ok' if r.correcta else 'mal' }}">{{ '✔ Acierto' if r.correcta else '✘ Error' }}</td><td>{{ r.xp }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table></div>
+  {% else %}
+  <p>Aún no has respondido preguntas. <a href="{{ url_for('practicar') }}">Empieza tu primera sesión.</a></p>
+  {% endif %}
+</div>
+{% endblock %}

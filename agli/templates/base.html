@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titulo %}AGLI, repaso de Biología{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/agli.css') }}">
+</head>
+<body class="{% block clase %}{% endblock %}">
+  {# Fondo decorativo: seres vivos que flotan suavemente. No lleva información. #}
+  <div class="bio-fondo" aria-hidden="true">
+    <svg class="deco d-celula" viewBox="0 0 100 100"><path d="M50 8C75 6 94 26 92 50 90 76 72 94 48 92 24 90 6 72 8 48 10 24 26 10 50 8Z" fill="#B9F0DC" stroke="#1F9D6B" stroke-width="3"/><circle cx="54" cy="46" r="16" fill="#8E7CE6"/><circle cx="58" cy="42" r="5" fill="#4A3AA8"/><ellipse cx="28" cy="64" rx="9" ry="4.5" fill="#F6A15B" transform="rotate(-20 28 64)"/><ellipse cx="74" cy="72" rx="7" ry="3.5" fill="#F6A15B" transform="rotate(30 74 72)"/><circle cx="30" cy="34" r="3" fill="#1F9D6B"/><circle cx="70" cy="24" r="2.5" fill="#1F9D6B"/></svg>
+    <svg class="deco d-hoja" viewBox="0 0 100 100"><path d="M15 85C15 40 45 12 88 12 88 55 60 85 15 85Z" fill="#8EDB8F" stroke="#2F8F46" stroke-width="3"/><path d="M15 85C40 60 60 40 80 20M40 60 38 42M55 45 54 30M40 60 58 62M55 45 70 47" stroke="#2F8F46" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+    <svg class="deco d-adn" viewBox="0 0 60 160"><g stroke-width="4" stroke-linecap="round"><path d="M14 30H46M10 40H50M14 50H46M14 70H46M10 80H50M14 90H46M14 110H46M10 120H50M14 130H46" stroke="#F6A15B"/><path d="M10 0C10 20 50 20 50 40S10 60 10 80 50 100 50 120 10 140 10 160" stroke="#2BB3C0" fill="none"/><path d="M50 0C50 20 10 20 10 40S50 60 50 80 10 100 10 120 50 140 50 160" stroke="#8E7CE6" fill="none"/></g></svg>
+    <svg class="deco d-bacteria" viewBox="0 0 120 60"><path d="M80 30C88 20 94 40 102 30S112 20 118 30" stroke="#E0715A" stroke-width="2.5" fill="none" stroke-linecap="round"/><rect x="6" y="14" width="76" height="32" rx="16" fill="#FFC6B5" stroke="#E0715A" stroke-width="3"/><circle cx="28" cy="27" r="3" fill="#E0715A"/><circle cx="48" cy="34" r="3.5" fill="#E0715A"/><circle cx="62" cy="24" r="2.5" fill="#E0715A"/></svg>
+    <svg class="deco d-mariposa" viewBox="0 0 100 80"><g class="ala-izq"><path d="M50 40C30 0 0 10 8 34 12 46 34 46 50 40Z" fill="#FFD166" stroke="#D98A00" stroke-width="2.5"/><path d="M50 42C36 50 20 70 34 74 44 76 48 60 50 42Z" fill="#FF9F7A" stroke="#D96A3A" stroke-width="2.5"/><circle cx="24" cy="28" r="5" fill="#fff" opacity=".8"/></g><g class="ala-der"><path d="M50 40C70 0 100 10 92 34 88 46 66 46 50 40Z" fill="#FFD166" stroke="#D98A00" stroke-width="2.5"/><path d="M50 42C64 50 80 70 66 74 56 76 52 60 50 42Z" fill="#FF9F7A" stroke="#D96A3A" stroke-width="2.5"/><circle cx="76" cy="28" r="5" fill="#fff" opacity=".8"/></g><rect x="47" y="24" width="6" height="40" rx="3" fill="#5B3A1A"/><path d="M49 26C46 16 42 12 38 10M51 26C54 16 58 12 62 10" stroke="#5B3A1A" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+    <svg class="deco d-flor" viewBox="0 0 80 100"><path d="M40 98V44" stroke="#2F8F46" stroke-width="4" stroke-linecap="round"/><path d="M40 74C20 74 12 60 12 52 28 52 40 60 40 74Z" fill="#8EDB8F" stroke="#2F8F46" stroke-width="2"/><path d="M40 64C60 64 68 50 68 42 52 42 40 50 40 64Z" fill="#8EDB8F" stroke="#2F8F46" stroke-width="2"/><g fill="#FF8FB1" stroke="#D9487A" stroke-width="2"><circle cx="40" cy="16" r="9"/><circle cx="53" cy="26" r="9"/><circle cx="48" cy="41" r="9"/><circle cx="32" cy="41" r="9"/><circle cx="27" cy="26" r="9"/></g><circle cx="40" cy="30" r="8" fill="#FFC23D" stroke="#D98A00" stroke-width="2"/></svg>
+    <svg class="deco d-pez" viewBox="0 0 100 60"><path d="M80 30 98 14V46Z" fill="#9BE1EE" stroke="#2892A8" stroke-width="3" stroke-linejoin="round"/><path d="M10 30C30 5 65 5 80 30 65 55 30 55 10 30Z" fill="#9BE1EE" stroke="#2892A8" stroke-width="3"/><path d="M48 14C54 22 54 38 48 46" stroke="#2892A8" stroke-width="2.5" fill="none"/><circle cx="26" cy="26" r="4" fill="#133A2E"/></svg>
+    <svg class="deco d-ameba" viewBox="0 0 100 100"><path d="M30 20C45 5 60 22 72 16 92 8 96 36 84 50 74 62 92 78 74 88 56 98 50 80 34 86 12 94 4 70 16 56 26 44 14 34 30 20Z" fill="#E3D9FF" stroke="#8E7CE6" stroke-width="3"/><circle cx="52" cy="50" r="12" fill="#B3A2F2"/><circle cx="55" cy="47" r="4" fill="#6B57D0"/><circle cx="30" cy="66" r="4" fill="#8E7CE6"/><circle cx="74" cy="34" r="3" fill="#8E7CE6"/></svg>
+    <svg class="deco d-celula2" viewBox="0 0 100 100"><rect x="10" y="14" width="80" height="72" rx="14" fill="#D4F5C4" stroke="#3E8E2E" stroke-width="3"/><rect x="18" y="22" width="64" height="56" rx="10" fill="none" stroke="#7BC86A" stroke-width="2" stroke-dasharray="4 4"/><circle cx="62" cy="42" r="11" fill="#8E7CE6"/><ellipse cx="34" cy="38" rx="8" ry="4" fill="#3E8E2E"/><ellipse cx="38" cy="62" rx="8" ry="4" fill="#3E8E2E" transform="rotate(25 38 62)"/><ellipse cx="66" cy="66" rx="7" ry="3.5" fill="#3E8E2E"/></svg>
+    <span class="burbuja b1"></span><span class="burbuja b2"></span><span class="burbuja b3"></span><span class="burbuja b4"></span><span class="burbuja b5"></span><span class="burbuja b6"></span>
+  </div>
+
+  {% if demo %}
+  <div class="aviso-demo">Modo demo: las respuestas correctas de las preguntas sin clave son de prueba y no están verificadas.</div>
+  {% endif %}
+  <header class="barra">
+    <a class="marca" href="{{ url_for('inicio') }}" aria-label="AGLI, inicio">
+      <svg class="marca-cel" viewBox="0 0 40 40" width="38" height="38" aria-hidden="true"><path d="M20 3C30 2 38 10 37 20 36 31 29 38 19 37 9 36 2 29 3 19 4 9 11 4 20 3Z" fill="#B9F0DC" stroke="#fff" stroke-width="2"/><circle cx="22" cy="18" r="7" fill="#8E7CE6"/><circle cx="24" cy="16" r="2.4" fill="#4A3AA8"/><ellipse cx="12" cy="26" rx="4" ry="2" fill="#F6A15B" transform="rotate(-20 12 26)"/><circle cx="28" cy="29" r="1.6" fill="#1F9D6B"/></svg>
+      <span>AGLI</span>
+    </a>
+    {% if u is defined and u %}
+    <nav class="barra-nav" aria-label="Principal">
+      <a href="{{ url_for('practicar') }}"><span aria-hidden="true">🔬</span> Practicar</a>
+      <a href="{{ url_for('progreso') }}"><span aria-hidden="true">🌱</span> Mi progreso</a>
+      <span class="alias">{{ u.alias }}</span>
+      <a href="{{ url_for('salir') }}">Salir</a>
+    </nav>
+    {% endif %}
+  </header>
+  <main>{% block main %}{% endblock %}</main>
+  <script src="{{ url_for('static', filename='js/agli.js') }}" defer></script>
+</body>
+</html>

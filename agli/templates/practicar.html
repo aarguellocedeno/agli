@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% from "_macros.html" import rail, progreso_sesion, puntos %}
+{% block titulo %}Pregunta {{ n }} de {{ sesion_len }}, AGLI{% endblock %}
+{% block main %}
+<div class="marco">
+  {{ rail(panel) }}
+  <section class="escena" aria-labelledby="titulo-pregunta">
+    {% if boss_pos %}
+    <div class="jefe-banda">
+      <span class="jefe-ico" aria-hidden="true">🦠</span>
+      <b>Jefe de «{{ kc_nombre(item.kc) }}»</b>
+      <span class="jefe-sub">Pregunta {{ boss_pos }} de {{ boss_len }}. Cada acierto da el doble de XP.</span>
+    </div>
+    {% endif %}
+    <div class="encabezado">
+      <h1 id="titulo-pregunta">Pregunta {{ n }} de {{ sesion_len }}</h1>
+      {{ progreso_sesion(segmentos, n) }}
+    </div>
+    <p class="meta"><span class="chip eje-{{ kc_slug(item.kc) }}">{{ kc_nombre(item.kc) }}</span><span class="reto">Reto {{ puntos(item.dificultad) }}</span></p>
+
+    <form method="post" action="{{ url_for('responder') }}" id="form-pregunta" class="pregunta">
+      <input type="hidden" name="csrf" value="{{ csrf }}">
+      <input type="hidden" name="tiempo_ms" id="tiempo_ms" value="0">
+      <div class="enunciado">
+        {% if item.imagen %}
+        <figure class="figura"><img src="{{ url_for('static', filename='img/preguntas/' ~ item.imagen) }}" alt="Figura necesaria para responder la pregunta"></figure>
+        {% endif %}
+        <p>{{ item.enunciado }}</p>
+      </div>
+      <fieldset class="opciones">
+        <legend class="sr">Elige una respuesta</legend>
+        {% for letra, texto in item.opciones.items() %}
+        <label class="opcion" style="--i:{{ loop.index }}">
+          <input type="radio" name="opcion" value="{{ letra }}" required>
+          <span class="cuerpo"><span class="letra">{{ letra }}</span><span class="texto">{{ texto }}</span></span>
+        </label>
+        {% endfor %}
+      </fieldset>
+      <div class="acciones">
+        <button class="btn" type="submit" id="comprobar" disabled>Comprobar</button>
+        <span class="ayuda">También puedes elegir con las teclas A, B, C o D.</span>
+      </div>
+    </form>
+  </section>
+</div>
+{% endblock %}

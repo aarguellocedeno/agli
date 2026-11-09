@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% from "_macros.html" import colonia %}
+{% block titulo %}Empezar, AGLI{% endblock %}
+{% block clase %}pagina-entrar{% endblock %}
+{% block main %}
+<div class="entrar">
+  <div class="entrar-texto">
+    <p class="etiqueta"><span aria-hidden="true">🧬</span> Biología · Grado séptimo</p>
+    <h1>Repasa <span class="resalta">Biología</span> y haz crecer tu laboratorio</h1>
+    <p class="lead">Cada pregunta se ajusta a lo que ya dominas. Acierta, sube de nivel y mira cómo se multiplican las células de tus colonias.</p>
+    <ul class="temas" aria-label="Temas que vas a repasar">
+      <li class="tema eje-energia"><span aria-hidden="true">⚡</span> Energía</li>
+      <li class="tema eje-procesos"><span aria-hidden="true">🧫</span> Procesos vitales</li>
+      <li class="tema eje-relacion"><span aria-hidden="true">🌍</span> Ecosistemas</li>
+      <li class="tema eje-herencia"><span aria-hidden="true">🧬</span> Herencia</li>
+    </ul>
+    <form method="post" action="{{ url_for('entrar') }}" class="form-entrar tarjeta">
+      <input type="hidden" name="csrf" value="{{ csrf }}">
+      <label for="alias">Tu alias de científico</label>
+      <input id="alias" name="alias" type="text" maxlength="20" autocomplete="off" required autofocus
+             aria-describedby="ayuda-alias{{ ' error-alias' if error }}">
+      <p id="ayuda-alias" class="ayuda">Usa un apodo, no tu nombre real. Si ya usaste este alias, sigues donde lo dejaste.</p>
+      {% if error %}<p id="error-alias" class="error" role="alert">{{ error }}</p>{% endif %}
+      <button class="btn" type="submit">Empezar <span aria-hidden="true">→</span></button>
+    </form>
+    <p class="ayuda">Tus respuestas se usan solo con fines académicos.</p>
+  </div>
+  <div class="entrar-deco" aria-hidden="true">
+    <div class="microscopio">
+      {{ colonia(deco, grande=True) }}
+      <span class="orbita o1">🌿</span>
+      <span class="orbita o2">🦋</span>
+      <span class="orbita o3">🧬</span>
+      <span class="orbita o4">🐞</span>
+    </div>
+    <p class="deco-pie">Así se ve una colonia al 60 %</p>
+  </div>
+</div>
+{% endblock %}
